@@ -1,13 +1,16 @@
 name: Appwright Test
 on: [push]
+
 jobs:
-run-tests:
-runs-on: ubuntu-latest steps:
-- uses: actions/checkout@v2
-- name: Set up Java uses: actions/setup-java@v3
-with:
-java-version: '17'
-- name: Run qgjob submit
-run:
-mvn -f qgjob-cli/pom.xml package
-java -jar qgjob-cli/target/agjob-cli-1.0. jar submit --org-id=qualgent --app-version-id-xyz123 --test-tests/onboar
+  run-tests:
+    runs-on: ubuntu-latest 
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Java 
+      - uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+    - name: Run qgjob submit
+    run:
+      mvn -f qgjob-cli/pom.xml package
+      java -jar qgjob-cli/target/qgjob-cli-1.0. jar submit --org-id=qualgent --app-version-id-xyz123 --test-tests/onboar
