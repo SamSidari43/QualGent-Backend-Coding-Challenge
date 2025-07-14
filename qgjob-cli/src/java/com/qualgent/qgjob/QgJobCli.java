@@ -42,3 +42,15 @@ class Submit implements Callable<Integer> {
   }
 }
 
+@Conmand (name = "status", description = "Check job status")
+class Status implements Callable<Integer> {
+@Option (names = "--job-id", required = true) String jobid;
+public Integer call() throws Exception {
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+-uri (URI. create("http://localhost: 8080/jobs/" + jobId))
+. GET ()
+-build();
+HttpResponse<String> response = Client send (request, HttpResponse.BodyHandlers.ofString());
+System.out .println(response.body));
+return 0;
