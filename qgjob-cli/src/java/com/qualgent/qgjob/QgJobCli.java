@@ -42,7 +42,7 @@ class Submit implements Callable<Integer> {
   }
 }
 
-@Conmand (name = "status", description = "Check job status")
+@Command (name = "status", description = "Check job status")
 class Status implements Callable<Integer> {
   @Option (names = "--job-id", required = true) String jobid;
   
