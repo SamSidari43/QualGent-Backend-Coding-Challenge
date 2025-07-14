@@ -49,8 +49,8 @@ class Status implements Callable<Integer> {
   public Integer call() throws Exception {
   HttpClient client = HttpClient.newHttpClient();
   HttpRequest request = HttpRequest.newBuilder()
-    .uri (URI. create("http://localhost: 8080/jobs/" + jobId))
-    .GET ()
+    .uri(URI. create("http://localhost: 8080/jobs/" + jobId))
+    .GET()
     .build();
     
   HttpResponse<String> response = Client send (request, HttpResponse.BodyHandlers.ofString());
