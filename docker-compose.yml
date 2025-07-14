@@ -1,10 +1,15 @@
-Version: 31
-Services: repis:
-image: redis ports:
-- 16379:6379*
-postEres:
-Anage: postgres environment:
-ROSTORELUSER: Usem
-POSTGRES_PASSWORD: password
-POSTGRES DE: jobs ports:
-- 5432-5432
+version: '3'
+services: 
+  redis:
+    image: redis 
+    ports:
+      - "6379:6379"
+      
+postgres:
+  image: postgres 
+  environment:
+    POSTGRES_USER: user
+    POSTGRES_PASSWORD: password
+    POSTGRES_DB: jobs 
+  ports:
+    - "5432:5432"
